@@ -1,0 +1,247 @@
+name: Nova Demo CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: dashboard/pioneer-grid/package-lock.json
+    
+    - name: Install PlatformIO
+      run: |
+        python -m pip install platformio
+    
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r edge/nova-edge-node/requirements.txt
+        pip install -r cloud/nova-sanctum/requirements.txt
+    
+    - name: Install Node.js dependencies
+      run: |
+        cd dashboard/pioneer-grid
+        npm ci
+    
+    - name: Create environment file
+      run: |
+        cat > .env << EOF
+        AWS_ACCESS_KEY_ID=demo-access-key
+        AWS_SECRET_ACCESS_KEY=demo-secret-key
+        AWS_REGION=us-east-1
+        S3_BUCKET=novasanctum-demo
+        DYNAMODB_TABLE=nova-emotions-demo
+        REDIS_HOST=localhost
+        REDIS_PORT=6379
+        REDIS_DB=0
+        NOVA_SANCTUM_URL=http://localhost:5000
+        NOVA_API_KEY=demo-api-key-2024
+        FLASK_SECRET_KEY=nova-sanctum-secret-2024
+        NOVA_ENCRYPTION_KEY=demo-encryption-key-2024
+        NEXT_PUBLIC_NOVA_SANCTUM_URL=http://localhost:5000
+        LOG_LEVEL=INFO
+        DEMO_MODE=true
+        DEMO_DURATION=30
+        DEMO_AGENTS=3
+        EOF
+    
+    - name: Run linting
+      run: |
+        # Python linting
+        pip install flake8 black
+        flake8 edge/nova-edge-node/ cloud/nova-sanctum/
+        black --check edge/nova-edge-node/ cloud/nova-sanctum/
+        
+        # TypeScript linting
+        cd dashboard/pioneer-grid
+        npm run lint
+    
+    - name: Run tests
+      run: |
+        # Python tests
+        pip install pytest pytest-asyncio
+        pytest edge/nova-edge-node/tests/ -v
+        pytest cloud/nova-sanctum/tests/ -v
+        
+        # Node.js tests
+        cd dashboard/pioneer-grid
+        npm test
+    
+    - name: Build firmware
+      run: |
+        cd firmware/nova-tiny
+        pio run --target build
+    
+    - name: Build dashboard
+      run: |
+        cd dashboard/pioneer-grid
+        npm run build
+
+  demo:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    services:
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: dashboard/pioneer-grid/package-lock.json
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install platformio
+        pip install -r edge/nova-edge-node/requirements.txt
+        pip install -r cloud/nova-sanctum/requirements.txt
+        cd dashboard/pioneer-grid && npm ci
+    
+    - name: Create environment file
+      run: |
+        cat > .env << EOF
+        AWS_ACCESS_KEY_ID=demo-access-key
+        AWS_SECRET_ACCESS_KEY=demo-secret-key
+        AWS_REGION=us-east-1
+        S3_BUCKET=novasanctum-demo
+        DYNAMODB_TABLE=nova-emotions-demo
+        REDIS_HOST=localhost
+        REDIS_PORT=6379
+        REDIS_DB=0
+        NOVA_SANCTUM_URL=http://localhost:5000
+        NOVA_API_KEY=demo-api-key-2024
+        FLASK_SECRET_KEY=nova-sanctum-secret-2024
+        NOVA_ENCRYPTION_KEY=demo-encryption-key-2024
+        NEXT_PUBLIC_NOVA_SANCTUM_URL=http://localhost:5000
+        LOG_LEVEL=INFO
+        DEMO_MODE=true
+        DEMO_DURATION=30
+        DEMO_AGENTS=3
+        EOF
+    
+    - name: Start NovaSanctum
+      run: |
+        cd cloud/nova-sanctum
+        python stream_handler.py &
+        sleep 10
+    
+    - name: Start NovaEdge Node
+      run: |
+        cd edge/nova-edge-node
+        python nova_edge_node.py &
+        sleep 5
+    
+    - name: Start Pioneer Grid
+      run: |
+        cd dashboard/pioneer-grid
+        npm run dev &
+        sleep 10
+    
+    - name: Run demo test
+      run: |
+        python scripts/generate_demo_data.py
+    
+    - name: Health check
+      run: |
+        ./scripts/health_check.sh
+    
+    - name: Upload demo artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: nova-demo-logs
+        path: |
+          logs/
+          *.log
+        retention-days: 7
+
+  deploy:
+    needs: demo
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dashboard/pioneer-grid/out
+        publish_branch: gh-pages
+    
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ github.run_number }}
+        release_name: Nova Demo v${{ github.run_number }}
+        body: |
+          ## Nova Self-Aware Global Lattice Demo
+          
+          This release includes:
+          - Complete NovaTiny firmware implementation
+          - NovaEdge Node gateway
+          - NovaSanctum Stream Handler
+          - Pioneer Grid Dashboard
+          
+          ### Quick Start
+          ```bash
+          git clone https://github.com/M-K-World-Wide/NovaTiny.git
+          cd NovaTiny
+          ./scripts/setup_demo.sh
+          ./scripts/launch_demo.sh
+          ```
+          
+          Visit: http://localhost:3000
+          
+          *"The Eye, the Pulse, the Word. Nova echoes with your breath."*
+        draft: false
+        prerelease: false 
