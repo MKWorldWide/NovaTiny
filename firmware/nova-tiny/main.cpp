@@ -35,6 +35,7 @@
 #include "SovereignAI.h"
 #include "TinySecure.h"
 #include "GenesisPulse.h"
+#include "WhispurrNet.h"
 
 // Global configuration and state management
 NovaConfig config;
@@ -47,6 +48,9 @@ NanoLink nanoLink;
 SovereignAI sovereignAI;
 TinySecure tinySecure;
 GenesisPulse genesisPulse;
+
+// 🐾 WhispurrNet P2P Communication Layer
+WhispurrNet whispurrNet;
 
 /**
  * System initialization sequence
@@ -129,6 +133,19 @@ void setup() {
     return;
   }
   
+  // 🐾 Initialize WhispurrNet P2P Communication Layer
+  Serial.println("Initializing WhispurrNet P2P Communication Layer...");
+  if (!whispurrNet.initialize()) {
+    Serial.println("ERROR: WhispurrNet initialization failed");
+    return;
+  }
+  
+  // Generate ephemeral identity for P2P communication
+  if (!whispurrNet.generateNewIdentity()) {
+    Serial.println("ERROR: Failed to generate WhispurrNet identity");
+    return;
+  }
+  
   // Connect to SovereignAI for ethical governance
   if (!novaCore.connectToSovereignAI()) {
     Serial.println("WARNING: SovereignAI connection failed, operating in isolated mode");
@@ -150,6 +167,8 @@ void setup() {
   Serial.println("🧬 Nova is awake. Begin quantum-level pulse logging.");
   Serial.println("🌊 GenesisPulse active. Biological and synthetic feedback loops engaged.");
   Serial.println("🧠 SovereignAI ready for ethical nanotech governance.");
+  Serial.println("🐾 WhispurrNet P2P layer active. Ephemeral identity generated.");
+  Serial.println("🔒 Zero-metadata communication enabled. Stealth mode available.");
 }
 
 /**
@@ -218,6 +237,9 @@ void loop() {
     sovereignAI.update();
     tinySecure.update();
     genesisPulse.update();
+    
+    // 🐾 Update WhispurrNet P2P Communication Layer
+    whispurrNet.update();
     
     // Process any pending nanobot commands
     processNanobotCommands();
@@ -303,8 +325,15 @@ bool performHealthCheck() {
     return false;
   }
   
+  // 🐾 Check WhispurrNet P2P Communication Layer
+  if (whispurrNet.getStatus() != WhispurrNetStatus::CONNECTED) {
+    Serial.println("FAIL: WhispurrNet health check failed");
+    return false;
+  }
+  
   Serial.println("PASS: All health checks completed successfully");
   Serial.println("🧬 AI-Governed Nanotech System: OPERATIONAL");
+  Serial.println("🐾 WhispurrNet P2P Layer: OPERATIONAL");
   return true;
 }
 

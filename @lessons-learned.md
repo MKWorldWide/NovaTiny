@@ -23,4 +23,13 @@
 ## Deployment Lessons
 - **Firmware Updates:** OTA (Over-The-Air) update capability essential
 - **Monitoring:** Health checks for all lattice components
-- **Backup Strategies:** Redundant data paths and failover mechanisms 
+- **Backup Strategies:** Redundant data paths and failover mechanisms
+
+## 🆕 WhispurrNet Integration Insights
+- **P2P Communication:** Resonance-based gossip protocols enable decentralized mesh networks
+- **Ephemeral Identities:** Node identity generation from entropy prevents tracking
+- **NaCl Encryption:** libsodium primitives provide superior security to traditional methods
+- **Zero Metadata Design:** Eliminating metadata reduces attack surface and privacy risks
+- **Dual Transport Strategy:** WebRTC with WebSocket fallback ensures connectivity in diverse network environments
+- **Resonance Keys:** Intent-based message routing enables efficient content discovery
+- **Obfuscation Layers:** Protocol fingerprinting allows traffic to blend with normal web traffic 

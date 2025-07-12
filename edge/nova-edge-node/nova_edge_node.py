@@ -53,6 +53,9 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 import base64
 
+# 🐾 WhispurrNet Integration
+from whispurrnet_integration import WhispurrNetIntegration
+
 # Configuration
 @dataclass
 class EdgeConfig:
@@ -85,6 +88,12 @@ class EdgeConfig:
     max_concurrent_connections: int = 5
     packet_queue_size: int = 100
     health_check_interval: int = 60  # Health check interval in seconds
+    
+    # 🐾 WhispurrNet P2P Configuration
+    whispurrnet_host: str = "0.0.0.0"
+    whispurrnet_port: int = 8765
+    enable_stealth_mode: bool = False
+    resonance_timeout: int = 30
 
 @dataclass
 class NovaPacket:
@@ -139,7 +148,16 @@ class NovaEdgeNode:
         # BLE scanner
         self.scanner = BleakScanner(detection_callback=self._on_device_detected)
         
-        self.logger.info("NovaEdge Node initialized successfully")
+        # 🐾 Initialize WhispurrNet P2P Communication Layer
+        self.whispurrnet_config = {
+            'whispurrnet_host': config.whispurrnet_host,
+            'whispurrnet_port': config.whispurrnet_port,
+            'enable_stealth_mode': config.enable_stealth_mode,
+            'resonance_timeout': config.resonance_timeout
+        }
+        self.whispurrnet = WhispurrNetIntegration(self.whispurrnet_config)
+        
+        self.logger.info("NovaEdge Node with WhispurrNet P2P layer initialized successfully")
     
     def _setup_logging(self):
         """Configure logging for the edge node"""
@@ -218,6 +236,10 @@ class NovaEdgeNode:
             await self.scanner.start()
             self.logger.info("BLE scanner started")
             
+            # 🐾 Start WhispurrNet P2P Communication Layer
+            await self.whispurrnet.initialize()
+            self.logger.info("WhispurrNet P2P layer started")
+            
             # Start background tasks
             asyncio.create_task(self._packet_processor())
             asyncio.create_task(self._cloud_sync_worker())
@@ -243,6 +265,10 @@ class NovaEdgeNode:
         
         # Stop BLE scanner
         await self.scanner.stop()
+        
+        # 🐾 Stop WhispurrNet P2P Communication Layer
+        await self.whispurrnet.shutdown()
+        self.logger.info("WhispurrNet P2P layer stopped")
         
         # Close database connection
         if hasattr(self, 'db_conn'):
