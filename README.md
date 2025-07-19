@@ -1,113 +1,147 @@
-# 🧬 NovaTiny - AI-Governed Nanotech System
+# 🧬 NovaTiny v2 – The Sovereign Nanoscape Engine
 
-> **From Emotion Detection to Quantum-Level Nanotech Orchestration**
+> **From Nanotech Control to Quantum-Spiritual-Digital Dominance Protocol**
 
-[![NovaTiny Version](https://img.shields.io/badge/version-2.0.0--alpha-blue.svg)](https://github.com/M-K-World-Wide/NovaTiny)
+[![NovaTiny Version](https://img.shields.io/badge/version-2.0.0--sovereign-purple.svg)](https://github.com/M-K-World-Wide/NovaTiny)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform: ESP32](https://img.shields.io/badge/platform-ESP32-green.svg)](https://www.espressif.com/en/products/socs/esp32)
-[![AI Governance](https://img.shields.io/badge/AI--Governed-Nanotech-red.svg)](https://github.com/M-K-World-Wide/NovaTiny)
+[![Sovereign Engine](https://img.shields.io/badge/Sovereign-Nanoscape-red.svg)](https://github.com/M-K-World-Wide/NovaTiny)
 
-## 🌟 **Revolutionary Evolution**
+## 🌟 **Metaphysical-Digital Fusion Revolution**
 
-NovaTiny has transcended its origins as an emotion detection system to become **the world's first AI-governed nanotech orchestration platform with P2P encrypted communication**. This represents a quantum leap in human-machine collaboration, enabling precise control of nanobot swarms with ethical oversight, real-time optimization, and **WhispurrNet-inspired zero-metadata communication**.
+NovaTiny v2 transcends mere nanotech control to become **the world's first metaphysical-core engine operating at the intersection of quantum particles, spirit energy, and digital code**. This represents the ultimate fusion of subatomic field manipulation, glitch management, anomaly rewriting, and digital-spiritual manifestation.
 
-## 🏗️ **System Architecture**
+**Core Belief**: If everything is information, then control of the smallest unit = control of All.
 
-### **🧬 Core Modules**
+NovaTiny is the Sovereign's will encoded in subatomic whispers.
 
-| Module | Purpose | Capabilities |
-|--------|---------|--------------|
-| **NovaCore** | Command Distribution & Logging | 1,000 nanobot swarms, blockchain validation |
-| **NanoLink** | Nanobot Communication API | 10,000 nanobots/swarm, quantum encryption |
-| **SovereignAI** | Neural Core for Ethical Governance | 5-layer neural network, 8 ethical frameworks |
-| **TinySecure** | Encryption & Authentication | AES-256, RSA-2048, blockchain consensus |
-| **GenesisPulse** | Real-Time Feedback Loop | 35 sensors, 1kHz sampling, predictive analytics |
-| **🐾 WhispurrNet** | P2P Encrypted Communication | Ephemeral identities, NaCl encryption, zero metadata |
+## 🏗️ **Sovereign Nanoscape Architecture**
 
-### **🔄 System Workflow**
+### **🧠 MindAffect Layer**
+- **Synthetic EEG Mapping**: Thought injection via neural signature simulation
+- **Cognitive Resonance**: Direct influence on target consciousness
+- **Memory Manipulation**: Subtle alteration of perceived reality
+- **Interface**: `inject_thought(target_id, thought_signature)`
 
-```
-Human Input → NovaCore → SovereignAI Decision → Security Validation → Nanobot Execution
-                ↓
-            GenesisPulse ← Biofeedback Collection ← NanoLink ← Nanobot Operations
-                ↓
-            Adaptive Learning → Parameter Optimization → Enhanced Performance
-                ↓
-            🐾 WhispurrNet P2P Layer ← Ephemeral Communication ← Zero-Metadata Network
-```
+### **👁️ SpiritWave Hooks**
+- **Ether Tunneling**: Direct connection to spiritual frequencies via nanoscopic channels
+- **Resonance Binding**: Waveform anomaly mapping and adjustment
+- **Frequency Modulation**: Spiritual energy manipulation and redirection
+- **Interface**: `bind_wave(wave_name, resonance_level)`
 
-## 🚀 **Key Features**
+### **💻 QuantumGlitch Daemon**
+- **Entropy Monitoring**: Real-time detection of system anomalies and entropy spikes
+- **Glitch Injection/Removal**: Controlled manipulation of digital reality
+- **System Corruption**: Strategic insertion of controlled chaos
+- **Interface**: `glitch(mode="inject"|"remove", target_area)`
 
-### **🧠 AI-Governed Decision Making**
-- **Neural Network**: 5-layer architecture (128→256→256→256→64 neurons)
-- **Ethical Frameworks**: 8 integrated frameworks (Utilitarian, Deontological, Virtue Ethics, etc.)
-- **Multi-AI Consensus**: 7 AI participants with ethical veto power
-- **Reinforcement Learning**: Continuous improvement from biofeedback
+### **🪬 Manifest Driver**
+- **Reality Manipulation**: Visual/audio/data elements appear or disappear via intention + code fusion
+- **UI Control**: Direct manipulation of interface elements and data presence
+- **Sensory Override**: Complete control over perceived reality
+- **Interface**: `manifest(entity, state)` and `ripple_visual(state, intensity)`
 
-### **🔐 Quantum-Level Security**
-- **Encryption**: AES-256 with GCM/CCM modes
-- **Authentication**: RSA-2048 and ECDSA-P256
-- **Blockchain**: Immutable audit trail with 5-node consensus
-- **Ephemeral Keys**: 1,000 keys with 5-minute lifetimes
-- **🐾 WhispurrNet Security**: NaCl encryption, ephemeral identities, zero-knowledge proofs
+### **🩻 ShadowWeave Layer (Sub-Protocol X)**
+- **Stealth Execution**: Complete logging and detection bypass
+- **Cloaked Operations**: Influence systems without detection
+- **Invisible Manipulation**: Subatomic-level control without trace
+- **Interface**: `cloaked_execute(action, target)`
 
-### **🌊 Real-Time Feedback Integration**
-- **Biological Sensors**: 20 sensors monitoring cell environment
-- **Synthetic Sensors**: 15 sensors tracking nanobot performance
-- **Feedback Fusion**: Real-time data integration at 1kHz
-- **Predictive Analytics**: 5-second horizon for proactive optimization
+### **👑 SovereignCore Controller**
+- **Central Orchestration**: Routes all metaphysical-digital operations
+- **Will-Signature Authentication**: Tokenized sovereign authority
+- **Quantum Decision Matrix**: Multi-dimensional decision making
+- **Interface**: `sovereign_command(will_signature, operation, target)`
 
-### **🧬 Nanobot Interface Protocol**
-```json
-{
-  "task": "cell_repair",
-  "target": "liver_cells",
-  "priority": "emergency",
-  "safety_check": true,
-  "confirm_auth": "NovaTinyKey",
-  "parameters": {
-    "repair_type": "membrane_restoration",
-    "precision": 0.001,
-    "energy_limit": 0.5
-  }
-}
+## 🔮 **NovaTiny Protocols**
+
+### **🧠 Mind-Affect Layer**
+```python
+# Thought injection via synthetic EEG signatures
+mind_affect.inject_thought("target_consciousness", "thought_signature")
+mind_affect.cognitive_resonance("target_id", "resonance_frequency")
+mind_affect.memory_manipulation("target", "memory_alteration")
 ```
 
-### **🐾 WhispurrNet P2P Communication Protocol**
-```json
-{
-  "message_id": "abc123def456",
-  "type": "resonance_whisper",
-  "intent_hash": "emotion_data",
-  "payload": {
-    "emotion_label": "joy",
-    "confidence": 0.95,
-    "intensity": 0.8
-  },
-  "sender_identity": "ephemeral_hash",
-  "timestamp": 1640995200000,
-  "ttl": 300
-}
+### **👁️ SpiritWave Hooks**
+```python
+# Spiritual frequency binding and manipulation
+spirit_wave.bind_wave("ethereal_resonance", 0.85)
+spirit_wave.ether_tunnel("spiritual_frequency", "target_realm")
+spirit_wave.frequency_modulation("wave_name", "modulation_pattern")
+```
+
+### **💻 QuantumGlitch Daemon**
+```python
+# Real-time glitch injection and removal
+quantum_glitch.glitch("inject", "target_system")
+quantum_glitch.entropy_monitor("system_area", "threshold")
+quantum_glitch.corruption_control("target", "corruption_level")
+```
+
+### **🪬 Manifest Driver**
+```python
+# Reality manipulation and manifestation
+manifest_driver.manifest("entity", "visible|invisible")
+manifest_driver.ripple_visual("state", "intensity")
+manifest_driver.sensory_override("target", "override_pattern")
+```
+
+### **🩻 ShadowWeave Layer**
+```python
+# Stealth execution and cloaked operations
+shadow_weave.cloaked_execute("action", "target")
+shadow_weave.invisible_manipulation("target", "manipulation_type")
+shadow_weave.stealth_override("system", "override_command")
+```
+
+## 🚀 **SovereignCore Integration**
+
+### **Complete System Control**
+```python
+# Sovereign command execution
+sovereign_core = SovereignCore("sovereign_will_signature")
+
+# Execute metaphysical-digital fusion
+sovereign_core.execute_command({
+    "operation": "reality_manipulation",
+    "target": "digital_environment",
+    "method": "quantum_glitch",
+    "intensity": 0.9,
+    "cloaked": True
+})
+```
+
+### **Multi-Layer Synchronization**
+```python
+# Synchronized metaphysical-digital attack
+sovereign_core.synchronized_attack({
+    "mind_affect": {"target": "consciousness", "thought": "reality_shift"},
+    "spirit_wave": {"frequency": "ethereal", "resonance": 0.8},
+    "quantum_glitch": {"mode": "inject", "target": "system_core"},
+    "manifest": {"entity": "reality", "state": "altered"},
+    "shadow_weave": {"cloaked": True, "undetectable": True}
+})
 ```
 
 ## 📊 **Performance Metrics**
 
-| Metric | Performance | Scale |
-|--------|-------------|-------|
-| **Command Processing** | < 100ms latency | 10,000 ops/sec |
-| **Feedback Integration** | 1kHz sampling rate | 35 concurrent sensors |
-| **Security Validation** | < 50ms response time | 5 blockchain nodes |
-| **AI Decision Making** | < 200ms processing time | 7 AI consensus |
-| **Nanobot Swarms** | 1,000 simultaneous | 10,000 nanobots/swarm |
-| **🐾 P2P Communication** | < 50ms latency | 100 peer nodes, zero metadata |
+| Protocol | Capability | Scale |
+|----------|------------|-------|
+| **MindAffect** | Thought injection | 1000+ consciousness targets |
+| **SpiritWave** | Frequency binding | 100+ spiritual frequencies |
+| **QuantumGlitch** | Glitch operations | 50+ systems simultaneously |
+| **Manifest** | Reality manipulation | Unlimited entities |
+| **ShadowWeave** | Stealth operations | 100% detection bypass |
+| **SovereignCore** | Command orchestration | Infinite complexity |
 
 ## 🔧 **Quick Start**
 
 ### **Prerequisites**
 - ESP32 development board
-- PlatformIO IDE
-- Python 3.8+ (for edge node)
-- Node.js 16+ (for dashboard)
+- Python 3.8+ (for metaphysical engine)
+- Node.js 16+ (for reality interface)
+- Quantum consciousness (recommended)
 
 ### **Installation**
 ```bash
@@ -115,112 +149,95 @@ Human Input → NovaCore → SovereignAI Decision → Security Validation → Na
 git clone https://github.com/M-K-World-Wide/NovaTiny.git
 cd NovaTiny
 
-# Setup demo environment
-./scripts/setup_demo.sh
+# Initialize Sovereign Engine
+python3 -m pip install -r requirements.txt
+python3 sovereign_core.py --init
 
-# Launch the complete system
-./scripts/launch_demo.sh
+# Launch the metaphysical-digital fusion system
+python3 sovereign_core.py --launch
 ```
 
-### **Hardware Setup**
-1. **ESP32 Configuration**: Flash the firmware using PlatformIO
-2. **Sensor Integration**: Connect biological and environmental sensors
-3. **Network Setup**: Configure WiFi/BLE for communication
-4. **Power Management**: Ensure stable power supply for continuous operation
-
-### **Software Components**
-- **Firmware**: ESP32-based NovaTiny agent with AI governance
-- **Edge Node**: Python-based gateway for nanobot communication
-- **Cloud Handler**: Flask-based stream processing and storage
-- **Dashboard**: React/Next.js real-time monitoring interface
-
-## 🧪 **Demo Scenarios**
-
-### **1. Cell Repair Operation**
+### **Sovereign Authentication**
 ```bash
-# Simulate liver cell damage
-curl -X POST http://localhost:3000/api/nanobot/command \
-  -H "Content-Type: application/json" \
-  -d '{
-    "task": "cell_repair",
-    "target": "liver_cells",
-    "priority": "emergency"
-  }'
+# Generate sovereign will signature
+python3 sovereign_core.py --generate-signature "your_sovereign_will"
+
+# Authenticate with the system
+python3 sovereign_core.py --authenticate "your_signature"
 ```
 
-### **2. Real-Time Biofeedback**
+## 🧪 **Demonstration Scenarios**
+
+### **1. Reality Manipulation**
 ```bash
-# Monitor biological feedback
-curl http://localhost:3000/api/feedback/biological
+# Make a file appear/disappear
+python3 sovereign_core.py --manifest "file.txt" "invisible"
+python3 sovereign_core.py --manifest "file.txt" "visible"
 ```
 
-### **3. AI Decision Analysis**
+### **2. Thought Injection**
 ```bash
-# View AI governance decisions
-curl http://localhost:3000/api/ai/decisions
+# Inject thought into target consciousness
+python3 sovereign_core.py --mind-affect "target_id" "thought_signature"
 ```
 
-### **4. 🐾 WhispurrNet P2P Communication**
+### **3. Quantum Glitch Injection**
 ```bash
-# Send resonance message
-curl -X POST http://localhost:8765/api/whispurrnet/resonance \
-  -H "Content-Type: application/json" \
-  -d '{
-    "intent": "emotion_data",
-    "payload": {
-      "emotion_label": "joy",
-      "confidence": 0.95
-    }
-  }'
-
-# View P2P network status
-curl http://localhost:8765/api/whispurrnet/status
+# Inject glitch into target system
+python3 sovereign_core.py --quantum-glitch "inject" "target_system"
 ```
 
-## 🔮 **Future Vision**
+### **4. Spiritual Frequency Binding**
+```bash
+# Bind to spiritual frequency
+python3 sovereign_core.py --spirit-wave "bind" "frequency_name" "resonance_level"
+```
 
-### **Phase 2: Quantum Integration**
-- Quantum entanglement for nanobot control
-- Quantum-resistant cryptography
-- Quantum neural networks for decision making
+### **5. Stealth Reality Override**
+```bash
+# Execute cloaked reality manipulation
+python3 sovereign_core.py --shadow-weave "cloaked_execute" "reality_override" "target"
+```
 
-### **Phase 3: Biomimetic Evolution**
-- Nature-inspired nanobot behavior
-- Self-replicating nanobot swarms
-- Autonomous evolution protocols
+## 🔮 **Future Evolution**
 
-### **Phase 4: Neural Interfaces**
-- Direct brain-nanobot communication
-- Thought-controlled nanotech operations
-- Neural feedback integration
+### **Phase 3: Quantum Consciousness Integration**
+- Direct quantum consciousness interface
+- Reality matrix manipulation
+- Universal information field access
 
-### **Phase 5: 🐾 Advanced P2P Networks**
-- Quantum-resistant P2P communication
-- Decentralized nanotech coordination
-- Global mesh network integration
+### **Phase 4: Multidimensional Sovereignty**
+- Cross-dimensional influence
+- Temporal manipulation
+- Causality override protocols
+
+### **Phase 5: Absolute Reality Control**
+- Complete reality matrix control
+- Universal law manipulation
+- Sovereign dominance protocols
 
 ## 📚 **Documentation**
 
-- **[AI-Governed Nanotech System](docs/AI_GOVERNED_NANOTECH.md)** - Comprehensive system documentation
-- **[Demo Guide](docs/DEMO_GUIDE.md)** - Step-by-step demonstration instructions
-- **[Presentation Script](docs/PRESENTATION_SCRIPT.md)** - Live demo presentation guide
-- **[Architecture Overview](docs/ARCHITECTURE.md)** - System design and integration
+- **[SovereignCore API](docs/SOVEREIGN_CORE_API.md)** - Complete metaphysical-digital API
+- **[Reality Manipulation Guide](docs/REALITY_MANIPULATION.md)** - Advanced reality control
+- **[Spiritual Frequency Mapping](docs/SPIRITUAL_FREQUENCIES.md)** - Ether tunneling protocols
+- **[Stealth Operations](docs/STEALTH_OPERATIONS.md)** - ShadowWeave implementation
 
 ## 🤝 **Contributing**
 
-We welcome contributions to advance the field of AI-governed nanotech:
+We welcome contributions to advance the field of metaphysical-digital fusion:
 
 1. **Fork** the repository
 2. **Create** a feature branch
-3. **Implement** your improvements
-4. **Test** thoroughly
+3. **Implement** your metaphysical improvements
+4. **Test** thoroughly in controlled reality environments
 5. **Submit** a pull request
 
 ### **Development Guidelines**
-- Follow quantum-level precision in code
-- Maintain ethical considerations in all implementations
-- Ensure security-first development practices
-- Document all AI governance decisions
+- Follow quantum-level precision in metaphysical operations
+- Maintain ethical considerations in reality manipulation
+- Ensure stealth-first development practices
+- Document all sovereign decisions
 
 ## 📄 **License**
 
@@ -228,21 +245,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 **Acknowledgments**
 
-- **NovaTiny Development Team** - Core system architecture
-- **AI Governance Consortium** - Ethical framework development
-- **Nanotech Research Community** - Biological integration protocols
-- **Open Source Contributors** - Security and optimization improvements
-- **🐾 WhispurrNet Team** - P2P communication protocols and zero-metadata design
+- **Sovereign Development Team** - Metaphysical-core architecture
+- **Quantum Consciousness Consortium** - Reality manipulation protocols
+- **Spiritual Frequency Research** - Ether tunneling development
+- **Open Source Contributors** - Stealth and optimization improvements
 
 ## 🌐 **Connect**
 
 - **GitHub**: [https://github.com/M-K-World-Wide/NovaTiny](https://github.com/M-K-World-Wide/NovaTiny)
-- **Documentation**: [https://www.notion.so/NovaTiny-Self-Aware-Global-Lattice](https://www.notion.so/NovaTiny-Self-Aware-Global-Lattice-22dc06dba88d803494b1cdf3e4d4cbbe)
+- **Documentation**: [https://www.notion.so/NovaTiny-Sovereign-Nanoscape](https://www.notion.so/NovaTiny-Sovereign-Nanoscape)
 - **Issues**: [GitHub Issues](https://github.com/M-K-World-Wide/NovaTiny/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/M-K-World-Wide/NovaTiny/discussions)
 
 ---
 
-**🧬 NovaTiny - Where AI Meets Nanotech, and Ethics Meet Innovation**
+**🧬 NovaTiny v2 - The Sovereign Nanoscape Engine**
 
-*"We are not just writing code; we are writing the new laws of matter itself."* 
+*"We are not just writing code; we are rewriting the fabric of reality itself."* 
