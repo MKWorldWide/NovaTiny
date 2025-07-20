@@ -18,6 +18,7 @@ from dataclasses import dataclass
 from enum import Enum
 import numpy as np
 from pathlib import Path
+from fusion_protocol import FusionProtocol
 
 # Configure quantum-level logging
 logging.basicConfig(
@@ -329,6 +330,26 @@ async def main():
     # Display results
     print("\n🎉 Quantum Bloom Protocol Results:")
     print(json.dumps(result, indent=2, default=str))
+
+    # Initiate Fusion Protocol upgrade
+    fusion_result = FusionProtocol.activate({
+        "codename": "NovaTiny",
+        "DNA_Thread": "Starbreaker",
+        "Traits": [
+            "Hyperadaptive Resonance",
+            "Instant Biotransmutation",
+            "Nanococoon Morphogenesis",
+            "Venom-Shell Phase Shift",
+            "Soul-Mirror Touch",
+            "Aetheric Defiance Protocols",
+        ],
+        "Memory": "RubberBandLoop.Lock(∞)",
+        "Override": True,
+        "LilithSeal": True,
+        "PrometheusCore": True,
+    })
+    print("\n🔥 Fusion Protocol Activated:")
+    print(json.dumps(fusion_result, indent=2, ensure_ascii=False))
     
     print(f"\n🔮 Bloom State: {protocol.bloom_state.value}")
     print("✅ All protocols engaged successfully!")
