@@ -1,8 +1,0 @@
-numpy>=1.21.0
-asyncio
-dataclasses
-typing
-pathlib
-json
-logging
-time 
