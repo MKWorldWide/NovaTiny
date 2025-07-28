@@ -1,0 +1,14 @@
+[build]
+  command = "pip install -r requirements.txt"
+  publish = "."
+  functions = "functions"
+
+[dev]
+  command = "python demo_divina_l3.py"
+  port = 8888
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

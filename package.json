@@ -1,0 +1,21 @@
+{
+  "name": "novatiny",
+  "version": "1.0.0",
+  "description": "NovaTiny - Divina-L3 Integration with WhispurrNet and NovaSanctum",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "quantum",
+    "divina-l3",
+    "whispurrnet",
+    "novasanctum",
+    "fusion"
+  ],
+  "author": "NovaTiny Team",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
