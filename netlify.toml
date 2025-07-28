@@ -1,6 +1,6 @@
 [build]
-  command = "pip install -r requirements.txt"
-  publish = "."
+  command = ""
+  publish = "public"
   functions = "functions"
 
 [build.environment]
@@ -8,13 +8,10 @@
   FLASK_APP = "app.py"
   FLASK_ENV = "production"
 
-[[plugins]]
-  package = "@netlify/plugin-python"
-
 [dev]
   command = "python app.py"
   port = 8080
-  publish = "."
+  publish = "public"
 
 [[redirects]]
   from = "/api/*"
