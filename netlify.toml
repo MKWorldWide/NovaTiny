@@ -21,11 +21,6 @@
   to = "/.netlify/functions/divina-l3"
   status = 200
 
-[build.environment]
-  PYTHON_VERSION = "3.9"
-  FLASK_APP = "app.py"
-  FLASK_ENV = "production"
-
 [functions]
   node_bundler = "esbuild"
   external_node_modules = ["@netlify/plugin-lighthouse"]
