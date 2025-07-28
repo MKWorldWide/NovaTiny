@@ -22,6 +22,6 @@
     "@fortawesome/react-fontawesome": "^0.2.0"
   },
   "devDependencies": {
-    "@netlify/plugin-python": "^1.1.0"
+    "@netlify/plugin-lighthouse": "^6.0.1"
   }
 }
