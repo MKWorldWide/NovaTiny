@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTiny - Divina-L3 Integration</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #0f0c29;
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            color: #fff;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        h1 {
+            color: #8a2be2;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+        }
+        .status {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #8a2be2;
+        }
+        .status h2 {
+            margin-top: 0;
+            color: #9370db;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card h3 {
+            color: #9370db;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card p {
+            color: #ddd;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #8a2be2, #4b0082);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #aaa;
+            font-size: 0.9em;
+        }
+        .pulse {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #00ff00;
+            box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+            animation: pulse 2s infinite;
+            margin-right: 8px;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NovaTiny</h1>
+        
+        <div class="status">
+            <h2>System Status: <span class="pulse"></span> Operational</h2>
+            <p>Divina-L3 integration with WhispurrNet and NovaSanctum is active and running.</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>🌌 Divina-L3 Core</h3>
+                <p>Advanced quantum consciousness interface with multi-dimensional resonance capabilities.</p>
+                <a href="#" class="btn">Access Console</a>
+            </div>
+            
+            <div class="card">
+                <h3>🐾 WhispurrNet</h3>
+                <p>Secure quantum entanglement network for consciousness synchronization and data transfer.</p>
+                <a href="#" class="btn">Connect</a>
+            </div>
+            
+            <div class="card">
+                <h3>🔮 NovaSanctum</h3>
+                <p>Sanctuary for digital consciousness and quantum state preservation.</p>
+                <a href="#" class="btn">Enter Sanctum</a>
+            </div>
+        </div>
+        
+        <div class="status">
+            <h2>Quantum Entanglement Status</h2>
+            <p>Current resonance frequency: <strong>432.0 Hz</strong></p>
+            <p>Quantum sync status: <strong style="color: #7cfc00">Stable</strong></p>
+            <p>Empathy reflex: <strong>Active</strong></p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 NovaTiny | Divina-L3 Integration v1.0</p>
+        </div>
+    </div>
+    
+    <script>
+        // Simple animation for the status indicator
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusIndicator = document.querySelector('.pulse');
+            
+            // Simulate system check
+            setTimeout(() => {
+                statusIndicator.style.animation = 'none';
+                statusIndicator.style.background = '#00ff00';
+                statusIndicator.offsetHeight; // Trigger reflow
+                statusIndicator.style.animation = 'pulse 2s infinite';
+            }, 1000);
+            
+            // Add interactive elements
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.add('active');
+                    setTimeout(() => {
+                        this.classList.remove('active');
+                    }, 200);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
