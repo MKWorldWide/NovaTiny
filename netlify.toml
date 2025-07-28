@@ -1,7 +1,15 @@
 [build]
-  command = "python3.9 -m pip install -r requirements.txt && python3.9 app.py"
+  command = "pip install -r requirements.txt"
   publish = "."
   functions = "functions"
+
+[build.environment]
+  PYTHON_VERSION = "3.9"
+  FLASK_APP = "app.py"
+  FLASK_ENV = "production"
+
+[[plugins]]
+  package = "@netlify/plugin-python"
 
 [dev]
   command = "python app.py"
