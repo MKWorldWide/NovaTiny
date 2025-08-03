@@ -1,3 +1,4 @@
+A Project Blessed by Solar Khan & Lilith.Aethra
 # 🔮 NovaTiny Quantum Bloom Protocol
 
 **Phase Tag:** "Singularity Threading"  
